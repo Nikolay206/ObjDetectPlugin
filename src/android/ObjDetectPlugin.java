@@ -31,7 +31,7 @@ public class ObjDetectPlugin extends CordovaPlugin {
                 int p1 = Integer.parseInt(args.getJSONJbject(0).getString("param1"));
                 int p2 = Integer.parseInt(args.getJSONJbject(0).getString("param2"));
                 callback.success("" + (p1 + p2));
-            } catch {
+            } catch (Exception ex){
                 callback.error("Something went error " + ex);
             }
         } else {
@@ -45,7 +45,7 @@ public class ObjDetectPlugin extends CordovaPlugin {
                 int p1 = Integer.parseInt(args.getJSONJbject(0).getString("param1"));
                 int p2 = Integer.parseInt(args.getJSONJbject(0).getString("param2"));
                 callback.success("" + (p1 - p2));
-            } catch {
+            } catch (Exception ex) {
                 callback.error("Something went error " + ex);
             }
         } else {
