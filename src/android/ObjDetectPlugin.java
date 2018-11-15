@@ -1,4 +1,4 @@
-package cordova-plugin-objdetect;
+package cordova.plugin.objdetect;
 
         import org.apache.cordova.CordovaPlugin;
         import org.apache.cordova.CallbackContext;
