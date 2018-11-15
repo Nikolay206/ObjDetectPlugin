@@ -1,4 +1,4 @@
-/********* ObjDetectPlugin.m Cordova Plugin Implementation *******/
+/******** ObjDetectPlugin.m Cordova Plugin Implementation ******/
 
 #import <Cordova/CDV.h>
 
@@ -16,11 +16,12 @@
 - (void)add:(CDVInvokedUrlCommand*)command
 {
     CDVPluginResult* pluginResult = nil;
-    NSNumber *param1 = [[command.arguments objectAtIndex:0] valueForKey:@"param1"]
-    NSNumber *param2 = [[command.arguments objectAtIndex:0] valueForKey:@"param2"]
+    NSNumber *param1 = [[command.arguments objectAtIndex:0] valueForKey:@"param1"];
+    NSNumber *param2 = [[command.arguments objectAtIndex:0] valueForKey:@"param2"];
     if (param1 >= 0 && param2 >= 0)
     {
-        NSString* total = @(param1+param2);
+        NSNumber *r = @([param1 intValue] + [param2 intValue]);
+        NSString *total = [r stringValue];
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:total];
     }
     else
@@ -33,11 +34,12 @@
 - (void)substract:(CDVInvokedUrlCommand*)command
 {
     CDVPluginResult* pluginResult = nil;
-    NSNumber *param1 = [[command.arguments objectAtIndex:0] valueForKey:@"param1"]
-    NSNumber *param2 = [[command.arguments objectAtIndex:0] valueForKey:@"param2"]
+    NSNumber *param1 = [[command.arguments objectAtIndex:0] valueForKey:@"param1"];
+    NSNumber *param2 = [[command.arguments objectAtIndex:0] valueForKey:@"param2"];
     if (param1 >= 0 && param2 >= 0)
     {
-        NSString* total = @(param1-param2);
+        NSNumber *r = @([param1 intValue] - [param2 intValue]);
+        NSString *total = [r stringValue];
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:total];
     }
     else
